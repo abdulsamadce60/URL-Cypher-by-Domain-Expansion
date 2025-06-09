@@ -1,89 +1,69 @@
-# ❤️ Heart Disease Prediction using Logistic Regression
 
-## 📌 Overview
-This project applies a **Logistic Regression model** to predict the presence of heart disease in a patient based on clinical and demographic data. It helps in early detection and preventive healthcare decision-making.
+URL Cypher by Domain Expansion 🔐🌐
+📌 Overview
+This project focuses on classifying and analyzing URL-based datasets using advanced machine learning techniques. It applies feature engineering, domain-based grouping, and modern classifiers to improve the detection of patterns in URL structures.
 
----
+📊 Technologies & Libraries Used
+Python 🐍
 
-## 📂 Data Collection & Description
+NumPy, Pandas
 
-- **Source**: `data.csv`
-- **Features**:
-  - `age`
-  - `sex`
-  - `cp` (chest pain type)
-  - `trestbps` (resting blood pressure)
-  - `chol` (serum cholesterol)
-  - `fbs` (fasting blood sugar)
-  - `restecg` (resting electrocardiographic results)
-  - `thalach` (maximum heart rate achieved)
-  - `exang` (exercise-induced angina)
-  - `oldpeak` (ST depression)
-  - `slope` (slope of the ST segment)
-  - `ca` (number of major vessels)
-  - `thal` (thalassemia)
-  - `target` (1 = heart disease, 0 = healthy)
+Scikit-learn
 
-**Data Shape**: `(303, 14)`  
-**No missing values detected.**
+XGBoost
 
----
+Category Encoders
 
-## 📊 Data Exploration
+NLTK
 
-- Checked data structure and types.
-- Verified absence of missing values.
-- Reviewed statistical summary (mean, min, max, etc.).
-- Verified distribution of target labels:
-  - `1` → Heart Disease (165 cases)
-  - `0` → Healthy (138 cases)
+Seaborn, Matplotlib
 
----
+📈 Workflow
+Data Collection & Cleaning
 
-## 📌 Data Preparation
+Loaded URL data and performed null value checks and cleaning.
 
-- **Split data** into:
-  - `X` (features)
-  - `Y` (target)
-- Further split into **Training** and **Test** sets (80:20 ratio) using stratified sampling to maintain label balance.
+Feature Engineering
 
----
+Created numerical and encoded categorical features.
 
-## 📈 Model Training
+Tokenized and stemmed URL text components.
 
-- **Algorithm Used**: Logistic Regression (sklearn)
-- Trained using the training set.
-- Encountered convergence warning due to iteration limit; recommended increasing `max_iter` or scaling data for improvement.
+Model Training & Evaluation
 
----
+Applied multiple models like Logistic Regression, Random Forest, and XGBoost.
 
-## 📊 Model Evaluation
+Evaluated model performance using F1-Score and Classification Reports.
 
-- **Training Accuracy**: `85.12%`
-- **Test Accuracy**: `81.96%`
+Result Visualization
 
----
+Visualized feature importances and performance metrics.
 
-## 🔮 Predictive System
+📌 How to Run
+Install dependencies:
 
-Built a small prediction system that:
-- Takes patient health indicators as input.
-- Predicts whether the patient has heart disease (`1`) or not (`0`).
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Run the Jupyter notebook:
 
----
+bash
+Copy
+Edit
+jupyter notebook URL_Cypher_by_Domain_Expansion.ipynb
+Follow cell-by-cell execution.
 
-## 🚀 Feature Improvements
+📊 Results
+Achieved significant F1-Score improvements via domain-specific feature engineering.
 
-- **Scale numerical features** to improve model convergence and accuracy.
-- **Increase Logistic Regression `max_iter`** to ensure full model convergence.
-- **Try alternative classifiers**:
-  - Random Forest
-  - XGBoost
-  - SVM
-- **Apply feature selection techniques** (e.g., correlation heatmap, recursive feature elimination) to improve performance.
-- **Balance data distribution** if needed with techniques like SMOTE.
-- **Hyperparameter tuning** using GridSearchCV for better optimization.
-- **Deploy as a web app** using Streamlit or Flask for real-time predictions.
+XGBoost outperformed baseline models on the dataset.
 
----
+🌱 Future Improvements
+Integrating additional NLP-based URL features like character entropy, suspicious keyword detection.
 
+Deploying the final model as an interactive web-based API using FastAPI/Streamlit.
+
+Incorporating deep learning methods (LSTM/CNN) for sequential URL pattern analysis.
+
+Adding model explainability tools like SHAP to interpret predictions.
